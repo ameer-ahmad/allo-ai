@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Response({response}) {
-    console.log(response)
   return (
     <div className="responseContainer">
         <h3>Prompt:</h3>
