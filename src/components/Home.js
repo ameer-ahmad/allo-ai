@@ -12,6 +12,7 @@ function Home() {
     const openai = new OpenAIApi(configuration);
 
     const submit = async () => {
+        setPrompt("");
         const response = await openai.createCompletion("text-davinci-001", {
             prompt: prompt, 
             temperature: 0.8,
@@ -24,11 +25,20 @@ function Home() {
     }
 
   return (
-    <div>
-        <h1>Fun with AI</h1>
-        <p>Enter prompt</p>
-        <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)}></textarea>
-        <button onClick={submit}>Submit</button>
+    <div className="app">
+        <h1 className="header">Fun with AI</h1>
+        <p className="enterPrompt">Enter prompt</p>
+        <textarea className="promptText" placeholder='Write a tagline for an ice cream shop.' value={prompt} onChange={(e) => setPrompt(e.target.value)}></textarea>
+        
+        <label for="cars">Select an AI engine: </label>
+        <select name="cars" id="cars">
+        <option value="volvo">text-davinci-002</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+        </select>
+
+        <button className="submit" onClick={submit}>Submit</button>
         <Responses responses={responses} />
     </div>
   )

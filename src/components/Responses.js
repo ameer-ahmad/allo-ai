@@ -4,7 +4,7 @@ import Response from './Response'
 function Responses({responses}) {
   return (
     <div>
-        <h2>Responses</h2>
+        <h2 className="responsesHeader">Responses</h2>
         {responses.map((response) => (
             <Response response={response} />
         ))}
