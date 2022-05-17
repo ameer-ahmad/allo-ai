@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import Responses from './Responses'
 const { Configuration, OpenAIApi } = require('openai');
 
 function Home() {
     const [prompt, setPrompt] = useState("");
+    const [responses, setResponses] = useState([]);
 
     const configuration = new Configuration({
         apiKey: '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',
@@ -18,8 +20,7 @@ function Home() {
             frequency_penalty: 0,
             presence_penalty: 0,
         })
-        console.log(prompt)
-        console.log(response.data.choices[0].text)
+        setResponses([{prompt: prompt, response: response.data.choices[0].text}, ...responses])
     }
 
   return (
@@ -28,6 +29,7 @@ function Home() {
         <p>Enter prompt</p>
         <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)}></textarea>
         <button onClick={submit}>Submit</button>
+        <Responses responses={responses} />
     </div>
   )
 }
