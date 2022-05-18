@@ -5,7 +5,7 @@ const { Configuration, OpenAIApi } = require('openai');
 function Footer() {
     const [prompt, setPrompt] = useState("");
     const {responses, setResponses} = useContext(ResponseContext);
-    const [engine, setEngine] = useState("text-davinci-002");
+    const [engine, setEngine] = useState("");
 
     useEffect(() => {
         const data = window.localStorage.getItem('RESPONSES');
@@ -24,23 +24,34 @@ function Footer() {
     const openai = new OpenAIApi(configuration);
 
     const submit = async () => {
-        setPrompt("");
-        const response = await openai.createCompletion(engine, {
-            prompt: prompt, 
-            temperature: 0.8,
-            max_tokens: 100,
-            top_p: 1,
-            frequency_penalty: 0,
-            presence_penalty: 0,
-        })
-        setResponses([...responses, {prompt: prompt, response: response.data.choices[0].text, engine: engine}])
-    }
+        if (prompt !== "") {
+            if (engine !== "") {
+                setPrompt("");
+                const response = await openai.createCompletion(engine, {
+                    prompt: prompt, 
+                    temperature: 0.8,
+                    max_tokens: 100,
+                    top_p: 1,
+                    frequency_penalty: 0,
+                    presence_penalty: 0,
+                })
+                setResponses([...responses, {prompt: prompt, response: response.data.choices[0].text, engine: engine}])
+            } else {
+                alert("Please select an AI Engine")
+            }
+            
+        } else {
+            alert("Please enter a prompt")
+        }
+        }
+        
 
   return (
     <div className="footer">
         <div className="footerSelect">
             <label>
                 <select name="engine" id="engine" onChange={(e) => setEngine(e.target.value)}>
+                <option value="">Select AI Engine</option>
                 <option value="text-davinci-002">text-davinci-002</option>
                 <option value="text-curie-001">text-curie-001</option>
                 <option value="text-babbage-001">text-babbage-001</option>
