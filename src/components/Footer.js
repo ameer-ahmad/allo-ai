@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import ResponseContext from '../ResponseContext';
 const { Configuration, OpenAIApi } = require('openai');
 
@@ -6,6 +6,17 @@ function Footer() {
     const [prompt, setPrompt] = useState("");
     const {responses, setResponses} = useContext(ResponseContext);
     const [engine, setEngine] = useState("text-davinci-002");
+
+    useEffect(() => {
+        const data = window.localStorage.getItem('RESPONSES');
+        if (data !== null) setResponses(JSON.parse(data));
+    }, [])
+
+    useEffect(() => {
+        if (responses?.length) {
+            window.localStorage.setItem('RESPONSES', JSON.stringify(responses));
+        }
+    }, [responses])
 
     const configuration = new Configuration({
         apiKey: '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',
