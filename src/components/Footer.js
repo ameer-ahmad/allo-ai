@@ -19,7 +19,7 @@ function Footer() {
     }, [responses])
 
     const configuration = new Configuration({
-        apiKey: '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',
+        apiKey: process.env.REACT_APP_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
 
