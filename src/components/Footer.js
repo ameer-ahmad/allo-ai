@@ -33,7 +33,7 @@ function Footer() {
             frequency_penalty: 0,
             presence_penalty: 0,
         })
-        setResponses([{prompt: prompt, response: response.data.choices[0].text}, ...responses])
+        setResponses([...responses, {prompt: prompt, response: response.data.choices[0].text, engine: engine}])
     }
 
   return (

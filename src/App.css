@@ -87,10 +87,39 @@
 }
 
 .responseContainer {
-  background-color: #eeeeee;
-  border-radius: 5px;
-  padding: 5px 25px 25px 25px;
+  border: 1px solid #C9C9C9;
+  border-radius: 16px;
+  padding: 5px 25px ;
   margin-bottom: 50px;
+}
+
+.responseText {
+  color: #758592;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.responseContainer hr {
+  width: 120%;
+  position: relative;
+  left: -30px;
+  background-color: #c9c9c9;
+  height: 1px;
+  border: none;
+}
+
+.responseIcon {
+  margin-right: 15px;
+}
+
+.responseTitle {
+  color: #1D5078;
+  font-weight: 700;
+}
+
+.responseEngine {
+  font-size: 14px;
+  color: #9c99af;
 }
 
 .footer {
@@ -156,6 +185,30 @@ select::-ms-expand {
 }
 
 .responses {
-  height: 620px;
+  height: 500px;
   overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }

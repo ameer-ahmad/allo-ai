@@ -1,12 +1,14 @@
 import React from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCog} from '@fortawesome/free-solid-svg-icons';
 
 function Response({response}) {
   return (
     <div className="responseContainer">
-        <h3>Prompt:</h3>
-        <p>{response.prompt}</p>
-        <h3>Response:</h3>
-        <p>{response.response}</p>
+        <p className="responseText responsePrompt"><span className="responseTitle">Prompt:</span> {response.prompt}</p>
+        <hr/>
+        <p className="responseText"><span className="responseTitle">Response:</span> {response.response}</p>
+        <p className="responseEngine"><FontAwesomeIcon icon={faCog} className="responseIcon" />{response.engine}</p>
     </div>
   )
 }
