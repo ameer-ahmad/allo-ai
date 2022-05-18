@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Responses from './Responses'
 const { Configuration, OpenAIApi } = require('openai');
 
@@ -6,6 +6,17 @@ function Home() {
     const [prompt, setPrompt] = useState("");
     const [responses, setResponses] = useState([]);
     const [engine, setEngine] = useState("text-davinci-002");
+
+    useEffect(() => {
+        const data = window.localStorage.getItem('RESPONSES');
+        if (data !== null) setResponses(JSON.parse(data));
+    }, [])
+
+    useEffect(() => {
+        if (responses?.length) {
+            window.localStorage.setItem('RESPONSES', JSON.stringify(responses));
+        }
+    }, [responses])
 
     const configuration = new Configuration({
         apiKey: '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',
@@ -23,7 +34,6 @@ function Home() {
             presence_penalty: 0,
         })
         setResponses([{prompt: prompt, response: response.data.choices[0].text}, ...responses])
-        console.log(engine);
     }
 
   return (
@@ -41,6 +51,10 @@ function Home() {
         </select>
 
         <button className="submit" onClick={submit}>Submit</button>
+        <button onClick={() => {
+            setResponses([])
+            localStorage.removeItem('RESPONSES')
+        }}>Clear</button>
         <Responses responses={responses} />
     </div>
   )
