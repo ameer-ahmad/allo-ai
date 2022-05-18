@@ -1,9 +1,13 @@
 import './App.css';
 import Home from './components/Home';
+import {ResponseProvider} from './ResponseContext';
 
 function App() {
   return (
-    <Home />
+    <ResponseProvider>
+      <Home />
+    </ResponseProvider>
+    
   );
 }
 

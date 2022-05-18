@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Responses from './Responses'
+import ResponseContext from '../ResponseContext';
 const { Configuration, OpenAIApi } = require('openai');
 
 function Home() {
     const [prompt, setPrompt] = useState("");
-    const [responses, setResponses] = useState([]);
+    const {responses, setResponses} = useContext(ResponseContext);
     const [engine, setEngine] = useState("text-davinci-002");
 
     useEffect(() => {
@@ -37,26 +38,26 @@ function Home() {
     }
 
   return (
-    <div className="app">
-        <h1 className="header">Fun with AI</h1>
-        <p className="enterPrompt">Enter prompt</p>
-        <textarea className="promptText" placeholder='Write a tagline for an ice cream shop.' value={prompt} onChange={(e) => setPrompt(e.target.value)}></textarea>
-        
-        <label for="engine">Select an AI engine: </label>
-        <select name="engine" id="engine" onChange={(e) => setEngine(e.target.value)}>
-        <option value="text-davinci-002">text-davinci-002</option>
-        <option value="text-curie-001">text-curie-001</option>
-        <option value="text-babbage-001">text-babbage-001</option>
-        <option value="text-ada-001">text-ada-001</option>
-        </select>
+        <div className="app">
+            <h1 className="header">Fun with AI</h1>
+            <p className="enterPrompt">Enter prompt</p>
+            <textarea className="promptText" placeholder='Write a tagline for an ice cream shop.' value={prompt} onChange={(e) => setPrompt(e.target.value)}></textarea>
+            
+            <label htmlFor="engine">Select an AI engine: </label>
+            <select name="engine" id="engine" onChange={(e) => setEngine(e.target.value)}>
+            <option value="text-davinci-002">text-davinci-002</option>
+            <option value="text-curie-001">text-curie-001</option>
+            <option value="text-babbage-001">text-babbage-001</option>
+            <option value="text-ada-001">text-ada-001</option>
+            </select>
 
-        <button className="submit" onClick={submit}>Submit</button>
-        <button onClick={() => {
-            setResponses([])
-            localStorage.removeItem('RESPONSES')
-        }}>Clear</button>
-        <Responses responses={responses} />
-    </div>
+            <button className="submit" onClick={submit}>Submit</button>
+            <button onClick={() => {
+                setResponses([])
+                localStorage.removeItem('RESPONSES')
+            }}>Clear</button>
+            <Responses responses={responses} />
+        </div>
   )
 }
 
