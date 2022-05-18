@@ -49,7 +49,7 @@ function Footer() {
             </label>
         </div>
         <div className="footerPrompt">
-            <input required className="promptText" placeholder='Enter your prompt!' value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+            <input required className="promptText" placeholder='Enter your prompt!' value={prompt} onChange={(e) => setPrompt(e.target.value)} onKeyPress={(e) => { e.key === "Enter" && submit() }} />
             <button className="submit" onClick={submit}>Submit Prompt</button>
         </div>
     </div>
