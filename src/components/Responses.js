@@ -6,7 +6,7 @@ function Responses() {
     const {responses} = useContext(ResponseContext);
 
   return (
-    <div>
+    <div className="responses">
         {responses.map((response, pos) => (
             <Response response={response} key={pos} />
         ))}

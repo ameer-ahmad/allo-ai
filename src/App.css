@@ -155,3 +155,8 @@ select::-ms-expand {
   border-radius: 16px;
   font-size: 18px;
 }
+
+.responses {
+  height: 620px;
+  overflow-y: auto;
+}
