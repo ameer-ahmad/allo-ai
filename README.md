@@ -29,3 +29,23 @@ Some features I would like to include if I had more time:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The app without any prompts:
+
+![1](public/screenshot1.png)
+
+The app when you submit without entering a prompt:
+
+![2](public/screenshot2.png)
+
+The app with one prompt:
+
+![3](public/screenshot5.png)
+
+The app with multiple prompts:
+
+![4](public/screenshot3.png)
+
+The app on a mobile device:
+
+![5](public/screenshot4.png)
