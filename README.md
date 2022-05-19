@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Allo - Fun with AI: Shopify 2022 Frontend Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Meet Allo, an AI that can process plain text prompts and produce outputs which you'll have trouble distinguishing from human writing. This project uses GPT-3, a powerful AI model created by OpenAI. The purpose of this project is for the Shopify Fall 2022 Front End Developer Intern Challenge.
 
-## Available Scripts
+View the deployed app here: https://allo-ai.netlify.app/
 
-In the project directory, you can run:
+Project Description: Users can go on Allo and ask the AI an assortment of prompts, ranging from "Create a slogan for an icecream store" to "Write a poem about a one legged horse". Users have the ability to choose from 4 different AI Engines. Each engine has different strengths including speed, capabilities, and cost. The app was built using ReactJS using functional components and context api for state management.
 
+The features of the app include:
+- Ask the OpenAI API a prompt and display the output
+- List the outputs from newest to oldest
+- Both the original prompt and the output are displayed
+
+Additional features which I added include:
+- Ability to choose from different AI Engines
+- An alert stops the user if they haven't specified an engine or written a prompt
+- The list is stored in local storage and is displayed once again if the user exits the browser or refreshes 
+- The list states which AI Engine was used for that prompt
+- Ability to clear local storage with a button
+
+Some features I would like to include if I had more time:
+- Adding animations and transitions
+- Loading screen while the API request is happening
+- Unit testing
+- Ability for user to choose how random the results are
+
+## Local Build
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The app without any prompts:
 
-### `npm test`
+![1](public/screenshot1.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app when you submit without entering a prompt:
 
-### `npm run build`
+![2](public/screenshot2.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app with one prompt:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![3](public/screenshot5.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app with multiple prompts:
 
-### `npm run eject`
+![4](public/screenshot3.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app on a mobile device:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![5](public/screenshot4.png)
