@@ -25,7 +25,7 @@ Some features I would like to include if I had more time:
 - Ability for user to choose how random the results are
 
 ## Local Build
-### 'npm start'
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
