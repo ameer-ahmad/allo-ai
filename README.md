@@ -48,8 +48,4 @@ The app with multiple prompts:
 
 The app on a mobile device:
 
-<<<<<<< HEAD
 ![5](public/screenshot4.png)
-=======
-![5](public/screenshot4.png)
->>>>>>> a468aa4ccf1c8f758c36d54fb2ef4004d2a58dd2
