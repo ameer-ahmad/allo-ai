@@ -19,7 +19,8 @@
   height:10vh;
   align-items: center;
   justify-content: space-between;
-  padding-top: 55px;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 
 .headerLogo {
@@ -191,7 +192,7 @@ select::-ms-expand {
 }
 
 .responses {
-  height: 65vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   
