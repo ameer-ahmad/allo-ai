@@ -49,7 +49,3 @@ The app with multiple prompts:
 The app on a mobile device:
 
 ![5](public/screenshot4.png)
-<<<<<<< HEAD
-=======
-
->>>>>>> 2d8240f270987f07ff6683a740797782f854fcbf

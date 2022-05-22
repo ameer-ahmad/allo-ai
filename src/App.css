@@ -16,9 +16,10 @@
 
 .header {
   display: flex;
-  height:180px;
+  height:10vh;
   align-items: center;
   justify-content: space-between;
+  padding-top: 55px;
 }
 
 .headerLogo {
@@ -123,7 +124,7 @@
 }
 
 .footer {
-  height: 280px;
+  height: 25vh;
   border-top: 1px solid #F1F1F1;
   padding-top: 37px;
 }
@@ -190,7 +191,7 @@ select::-ms-expand {
 }
 
 .responses {
-  height: 500px;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   
@@ -246,6 +247,10 @@ select::-ms-expand {
     content: "Allo";
     position: absolute;
     
+  }
+
+  .submit {
+    margin-left: 10px;
   }
 
 }
